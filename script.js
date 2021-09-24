@@ -1,5 +1,7 @@
 let num = prompt("Введите числитель");
 let denom = prompt("Введите знаменатель");
+let n = num;
+let d = denom;
 if (isNaN(num) || isNaN(denom))
   alert("Числитель и знаменатель должны быть числами");
 else {
@@ -10,6 +12,10 @@ else {
       if (num > denom) num -= denom;
       else denom -= num;
     }
-    document.write(num);
+    document.write(num + "<br>");
+    n /= num;
+    d /= num;
+    document.write(n + "; " + d);
+    if (n > d) document.write(" = " + ~~(n / d) + " " + (n % d) + "/" + d);
   }
 }
